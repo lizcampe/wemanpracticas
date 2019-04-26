@@ -11,11 +11,30 @@ function dibujaTarjetas(arreglo) {
 	ctrlMostrado.innerHTML = imprime;
 }
 
-function ordenaPorHabitacion(arreglo) {
+function ordenaPorHabitacion(registro) {
+	if (registro.length<=1){
+		return registro;
+	} else {
+		var pivot = Math.floor(Math.random()* registro.length-1);
+		var max = [];
+		var min = [];
+		var p = [];
+		for (var i = 0; registro.length;i++){
+			if (registro[pivot].numHabitacion > registro[i].numHabitacion) {
+				min.push(registro[i].numHabitacion);
+			} else if (registro[pivot].numHabitacion < registro[i].numHabitacion) {
+				max.push(registro[i].numHabitacion);
+			} else {
+				p.push (registro[i].numHabitacion);
+			}
+		}
+		return(ordenaPorHabitacion(min)).concat(p, ordenaPorHabitacion(max));
+	}
 	//En esta función escribe la función que ordenará el arreglo por habitación
+
+
 }
 
 function ordenaPorHuesped(arreglo) {
 	//Acá puedes hacer la otra que ordene por el nombre del huesped
 }
-
