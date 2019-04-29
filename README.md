@@ -14,3 +14,4 @@ El proyecto como tal no tiene estilos ni presentación, así que se recomienda h
 ## Parte Pro del ejercicio:
 Si les sobra tiempo y quieren llevarlo más allá:
 * Calcular el tiempo de ejecución de cada tipo de ordenamiento.
+# wemanpracticas
