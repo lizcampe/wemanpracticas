@@ -1,5 +1,15 @@
 //Esta variable guarda una referencia al control de resultado, se declara global para no tener que estar ejecutando document.getElementById en cada ocasión que se necesite
-let ctrlMostrado = document.getElementById("salida").innerHTML;
+let ctrlMostrado = document.getElementById("salida");
+
+function dibujaTarjetas (arreglo) {
+	let imprime = "<table id= 'registro'> <tr> <th>Habitación</th> <th>Huesped</th></tr>";
+	//La siguiente estructura de for es casi ya un arcaísmo. Sin embargo, los clásicos nunca mueren.
+	for (let i = 0; i < arreglo.length; i++) {
+		imprime += "<tr><td>" + arreglo[i].numHabitacion + "</td><td>" + arreglo[i].nombreHuesped + "</td></tr>";
+	}
+	imprime += "</table>"
+	ctrlMostrado.innerHTML = imprime;
+}
 
 var registro = [
 	{numHabitacion: "87", nombreHuesped: "Donna Noble"},
@@ -12,15 +22,7 @@ var registro = [
 	{numHabitacion: "47", nombreHuesped: "Katherin Janeway"}
 ];
 
-function dibujaTarjetas (arreglo) {
-	let imprime = "<table id= 'registro'> <tr> <th>Habitación</th> <th>Huesped</th></tr>";
-	//La siguiente estructura de for es casi ya un arcaísmo. Sin embargo, los clásicos nunca mueren.
-	for (let i = 0; i < arreglo.length; i++) {
-		imprime += "<tr><td>" + arreglo[i].numHabitacion + "</td><td>" + arreglo[i].nombreHuesped + "</td></tr>";
-	}
-	imprime += "</table>"
-	ctrlMostrado.innerHTML = imprime;
-}
+
 
 
 function ordenaPorHabitacion(registro) {
@@ -34,12 +36,12 @@ function ordenaPorHabitacion(registro) {
 		var p = [];
 
     for (var i = 0; registro.length;i++){
-			if (registro.numHabitacion[pivot] > registro.numHabitacion[i] {
-				min.push(registro.numHabitacion[i]);
-			}  if (registro.numHabitacion[pivot] < registro.numHabitacion[i]) {
-				max.push(registro.numHabitacion[i]);
-			}  else if (registro.numHabitacion[pivot] = registro.numHabitacion)[i] {
-				p.push (registro.numHabitacion[i]);
+			if (registro[pivot].numHabitacion > registro[i].numHabitacion {
+				min.push(registro[i].numHabitacion);
+			} else if (registro[pivot].numHabitacion < registro[i].numHabitacion) {
+				max.push(registro[i].numHabitacion);
+			}  else {
+				p.push (registro[i].numHabitacion);
 			}
 
 	
