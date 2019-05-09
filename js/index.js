@@ -35,7 +35,7 @@ function ordenaPorHabitacion(registro) {
 		var min = [];
 		var p = [];
 
-    for (var i = 0; registro.length;i++){
+    for (var i = 0; i <= registro.length;i++){
 			if (registro[pivot].numHabitacion > registro[i].numHabitacion {
 				min.push(registro[i].numHabitacion);
 			} else if (registro[pivot].numHabitacion < registro[i].numHabitacion) {
